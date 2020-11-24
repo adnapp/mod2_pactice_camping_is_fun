@@ -1,0 +1,14 @@
+<h1> Camper show page for <%=@camper.name%> </h1>
+
+<p>Age: <%=@camper.age%></p>
+<p>Activities that <%=@camper.name%> is signed up for:</p>
+
+<ul>
+<% @camper.activities.each do |activity|%>
+    <li><%= activity.name %></li>
+    <%end%>
+</ul>
+
+<br><br>
+<%= button_to "Remove this camper from camp", camper_path(@camper), method: :delete %>
+<%=  link_to 'See All Campers', campers_path %>
